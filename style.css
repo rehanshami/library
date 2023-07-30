@@ -11,7 +11,29 @@
 }
 
 .book {
-    background-color: darkslategrey;
+   
     color: white;
     font-size: 1.2rem;
+}
+
+.display-toggle {
+    display: none;
+}
+
+.library-books {
+    padding: 2rem 4rem;
+
+}
+
+.book-card {
+    padding: 1.2rem 1rem;
+    width: max(3rem, 12%);
+    background-color: #62695a;
+    border-radius: 10px;
+}
+
+.book-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
