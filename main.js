@@ -51,10 +51,18 @@ function displayBooksInLibrary() {
   const library = document.querySelector('.library-books');
 
   const booksInLibrary = document.querySelector('.library-books .book');
+  while(booksInLibrary.firstChild) {
+    booksInLibrary.removeChild(booksInLibrary.firstChild);
+  }
   myLibrary.forEach((book) => {
 
     const bookCard = document.createElement('div');
     bookCard.classList.add('book-card');
+
+    const removeCard = document.createElement('span')
+    removeCard.classList.add('remove-book');
+    removeCard.classList.add('material-icons')
+    removeCard.textContent = `close`;
 
     const bookTitle = document.createElement('p');
     bookTitle.textContent = `Title: ${book.title}`
@@ -68,6 +76,7 @@ function displayBooksInLibrary() {
     const bookRead = document.createElement('p');
     bookRead.textContent = `Read: ${book.read ? "Yes" : "No"}`;
 
+    bookCard.appendChild(removeCard)
     bookCard.appendChild(bookTitle);
     bookCard.appendChild(bookAuthor);
     bookCard.appendChild(bookPages);
@@ -76,9 +85,17 @@ function displayBooksInLibrary() {
     booksInLibrary.appendChild(bookCard);
     library.appendChild(booksInLibrary);
 
+    removeCard.addEventListener('click', () => {
+      removeBookFromLibrary(book);
+    })
 
 
   })
+}
+
+function removeBookFromLibrary(book) {
+  myLibrary.splice(book, 1);
+  displayBooksInLibrary();
 }
 console.log(myLibrary)
 
@@ -97,3 +114,8 @@ const addBookInput = document.querySelector('#add-book');
 addBookInput.addEventListener('click', () => {
   bookForm.classList.toggle('display-toggle');
   })
+
+const closeForm = document.querySelector('.close-form');
+closeForm.addEventListener('click', () => {
+  bookForm.classList.toggle('display-toggle')
+})  
