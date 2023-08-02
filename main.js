@@ -73,8 +73,8 @@ function displayBooksInLibrary() {
     const bookPages = document.createElement('p');
     bookPages.textContent = `Pages: ${book.pages}`
 
-    const bookRead = document.createElement('p');
-    bookRead.textContent = `Read: ${book.read ? "Yes" : "No"}`;
+    const bookRead = document.createElement('button');
+    bookRead.textContent = `${book.read ? "Read" : "Not read"}`;
 
     bookCard.appendChild(removeCard)
     bookCard.appendChild(bookTitle);
@@ -89,6 +89,8 @@ function displayBooksInLibrary() {
       removeBookFromLibrary(book);
     })
 
+    bookRead.addEventListener('click', () => {
+      updateReadStatus(bookRead)});
 
   })
 }
@@ -119,3 +121,15 @@ const closeForm = document.querySelector('.close-form');
 closeForm.addEventListener('click', () => {
   bookForm.classList.toggle('display-toggle')
 })  
+
+function updateReadStatus(bookRead) {
+  if (bookRead.textContent === "Read") {
+    bookRead.textContent = "Not read";
+    bookRead.classList.add('not-read');
+    bookRead.classList.remove('book-read')
+  } else {
+    bookRead.textContent = "Read";
+    bookRead.classList.add('book-read');
+    bookRead.classList.remove('not-read');
+    }
+}

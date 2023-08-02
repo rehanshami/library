@@ -186,3 +186,28 @@ input:valid {
 input:invalid:not(:placeholder-shown) {
     border: 2px solid #D55C5F;;
 }
+
+.book-card button {
+    padding: 0.5rem 1rem;
+    width: 10rem;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    border: 0;
+}
+
+.book-read {
+    background-color: #9fff9c;
+}
+
+.book-card .book-read:hover {
+    filter: brightness(90%);
+}
+
+.not-read {
+    background-color: #D55C5F;
+}
+
+.not-read:hover {
+    filter: brightness(90%);
+}
