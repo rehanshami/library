@@ -12,7 +12,7 @@ body {
 }
 
 
-input {
+input[type="text"]:focus {
     appearance: none;
     -webkit-appearance: none;
 }
