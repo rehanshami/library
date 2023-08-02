@@ -11,6 +11,12 @@ body {
     background-color: #f0eef1;
 }
 
+
+input {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
 .header {
     padding: 20px 80px;
     display: flex;
