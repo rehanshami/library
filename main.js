@@ -75,6 +75,7 @@ function displayBooksInLibrary() {
 
     const bookRead = document.createElement('button');
     bookRead.textContent = `${book.read ? "Read" : "Not read"}`;
+    bookRead.classList.add(book.read ? "book-read" : "not-read")
 
     bookCard.appendChild(removeCard)
     bookCard.appendChild(bookTitle);
