@@ -139,6 +139,8 @@ form button {
     cursor: pointer;
     margin-bottom: 1.5rem;
     transition: filter 0.15s ease-in-out;
+    color: #202020;
+    font-weight: 500;
 }
 
 .book-form .close-form {
@@ -182,6 +184,7 @@ form button:hover {
     cursor: pointer;
     background-color: #dfe1de;
     font-size: 1.2rem;
+    color: #202020;
 }
 
 #add-book:hover {
@@ -209,6 +212,8 @@ input:invalid:not(:placeholder-shown) {
     outline: none;
     cursor: pointer;
     border: 0;
+    color: #202020;
+    font-weight: 500;
 }
 
 .book-read {
